@@ -1,12 +1,14 @@
 package by.tourist.controller;
 
 import by.tourist.entity.City;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import by.tourist.services.implementation.CityServiceImpl;
 
 import java.util.List;
 
+@Api
 @RestController
 @RequestMapping("/city")
 public class CityController {
