@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: "tourist-telegram-bot"
+  datasource:
+    url: jdbc:mysql://localhost:3306/tourist
+    username: root
+    password: rootroot
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true
