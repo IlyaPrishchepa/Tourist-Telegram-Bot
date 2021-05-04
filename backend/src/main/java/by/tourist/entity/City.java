@@ -1,4 +1,4 @@
-package entity;
+package by.tourist.entity;
 
 import lombok.Getter;
 import lombok.Setter;
