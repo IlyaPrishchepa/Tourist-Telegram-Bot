@@ -1,0 +1,59 @@
+<div class="container my-4">
+  <h1 class="text-center">All Cities</h1>
+  <div class="d-flex justify-content-center">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let city of cities; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td> {{city.name}}</td>
+        <td> {{city.description}}</td>
+        <button class="btn btn-danger btn-round btn-fill" (click)="delete(city)">delete</button>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <ngb-pagination
+    class="d-flex justify-content-center"
+    [collectionSize]="collectionSize"
+    [pageSize]="pageSize"
+    [(page)]="page"
+    [boundaryLinks]="true"
+    (pageChange)="onPageChanged($event)">
+  </ngb-pagination>
+
+  <button class="btn btn-success" (click)="openModal(content)">add</button>
+
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add category</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Name City" aria-describedby="basic-addon2" [(ngModel)]="city.name">
+    </div>
+
+    <div class="input-group">
+      <textarea class="form-control" placeholder="Description" aria-label="With textarea"[(ngModel)]="city.description"></textarea>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-success" (click)="create()">add</button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
