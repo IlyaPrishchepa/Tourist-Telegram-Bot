@@ -26,9 +26,9 @@ public class CityController {
         return cityService.findAll(page, size);
     }
 
-    @GetMapping("/find-by-name")
-    public List<City> findByName(@RequestParam String name,@RequestParam int page,@RequestParam int size) {
-        return cityService.findByName(name, page, size);
+    @GetMapping("/find-by-name/{name}")
+    public City findByName(@PathVariable String name) {
+        return cityService.findByName(name);
     }
 
     @GetMapping("/size")

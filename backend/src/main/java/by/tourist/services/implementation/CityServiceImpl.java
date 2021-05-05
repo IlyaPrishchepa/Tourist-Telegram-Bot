@@ -26,8 +26,8 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public List<City> findByName(String name, int page, int size) {
-        return cityRepo.findCitiesByName(name, PageRequest.of(page, size));
+    public City findByName(String name) {
+        return cityRepo.findCityByName(name);
     }
 
     @Override

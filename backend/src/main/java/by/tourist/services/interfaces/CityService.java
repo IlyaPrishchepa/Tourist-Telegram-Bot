@@ -8,7 +8,7 @@ public interface CityService {
 
     City create(City city);
     List<City> findAll(int page, int size);
-    List<City> findByName(String name,int page, int size);
+    City findByName(String name);
     int getSize();
     void deleteById (int id);
 
