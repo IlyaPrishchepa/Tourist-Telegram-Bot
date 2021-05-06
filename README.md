@@ -9,8 +9,8 @@ To run the application you need:
 3. run the backend project, from BackApplication.java
 4. to work with data about cities, you can use fronted (more about launching in Readme.md inside fronted) or Swagger UI
 5. after starting the project, open telegram and find testBot:
-  5.1 name: IlyaPrishchepaTouristTelegramBot
-  5.2 token: 1735796290:AAHGWxx_7NDmu_I0pBHhljDX-GZ4Mp7jBgE
+5.1 name: IlyaPrishchepaTouristTelegramBot
+5.2 token: 1735796290:AAHGWxx_7NDmu_I0pBHhljDX-GZ4Mp7jBgE
 6. enter city name
 
 The result of the application in the telegram (https://t.me/IlyaPrishchepaTouristTelegramBot):
