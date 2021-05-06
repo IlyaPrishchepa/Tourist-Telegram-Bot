@@ -18,12 +18,12 @@ public class CityController {
     private CityServiceImpl cityService;
 
     @PostMapping
-    public City create( @RequestBody City city) {
+    public City create(@RequestBody City city) {
         return cityService.create(city);
     }
 
     @GetMapping("/find-all")
-    public List<City> findAll(@RequestParam int page,@RequestParam int size) {
+    public List<City> findAll(@RequestParam int page, @RequestParam int size) {
         return cityService.findAll(page, size);
     }
 

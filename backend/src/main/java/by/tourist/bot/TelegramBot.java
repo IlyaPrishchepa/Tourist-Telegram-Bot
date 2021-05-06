@@ -38,25 +38,27 @@ public class TelegramBot extends TelegramLongPollingBot {
         Message message = update.getMessage();
 
         if (message != null && update.getMessage().hasText()) {
-            long chatId = message.getChatId();
 
-            City reqCity = new City();
+            long chatId = message.getChatId();
+            City reqCity = cityService.findByName(message.getText());
             String msg;
 
-            reqCity = cityService.findByName(message.getText());
-
-            if (reqCity != null){
+            if (reqCity != null) {
                 msg = reqCity.getDescription();
-            } else{
+            } else {
                 msg = "There is no information for this city";
             }
-            try {
-                execute(new SendMessage(chatId,  msg));
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
+
+            this.sendMessage(chatId, msg);
         }
     }
 
+    private void sendMessage(long chatId, String msg) {
+        try {
+            execute(new SendMessage(chatId, msg));
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

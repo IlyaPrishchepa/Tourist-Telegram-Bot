@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {City} from '../model/city';
 import {Observable} from 'rxjs';
@@ -16,7 +16,7 @@ export class CityService {
 
   public getAllCity(page: number, size: number): Observable<any> {
     page -= 1;
-    return this.http.get<City[]>(this.cityUrl + '/find-all?page=' + page + '&size=' + size );
+    return this.http.get<City[]>(this.cityUrl + '/find-all?page=' + page + '&size=' + size);
   }
 
   public getSize(): Observable<any> {

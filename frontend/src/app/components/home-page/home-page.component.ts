@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {City} from '../../model/city';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CityService} from '../../services/city.service';
@@ -47,11 +47,13 @@ export class HomePageComponent implements OnInit {
     this.getCities();
   }
 
-  delete(city: City): void{
-    this.cityService.delete(city).subscribe(() => {this.ngOnInit(); });
+  delete(city: City): void {
+    this.cityService.delete(city).subscribe(() => {
+      this.ngOnInit();
+    });
   }
 
-  create(): void{
+  create(): void {
     this.cityService.create(this.city).subscribe(data => {
         this.city = data;
         alert('Ok');
